@@ -3,6 +3,10 @@ all: report.html
 clean:
 	rm -f words.txt histogram.tsv histogram.png report.html
 
+.PHONY: all clean
+.DELETE_ON_ERROR:
+.SECONDARY:
+
 words.txt: /usr/share/dict/words
 	cp $< $@
 
